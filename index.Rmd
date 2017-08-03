@@ -73,7 +73,7 @@ observeEvent(input$plot_mod, {
           marker = list(color = "#094789"),
           type = "bar",
           orientation = "h",
-          height = 650
+          height = 750
         ) %>%
           layout(
             margin = list(l = 100, t = 30, b = 30),
@@ -174,7 +174,7 @@ Column {data-width=1000}
 
 <div style="background: white; padding: 10px">
 
-__Raw data for the analysis.__ Each of the 16 variables is given in a column, each state is in a row. See [Details](https://cci-dev.org/shiny/closed/states/#section-details) for a table of how each variable was scored.
+__Raw data for the analysis.__ Each of the 16 variables is given in a column, each state is in a row. See [Details](https://cci-dev.org/shiny/open/state_ESAs/#section-details) for a table of how each variable was scored.
 
 ```{r datatable, echo = FALSE}
 renderDataTable({
@@ -213,7 +213,7 @@ This app accompanies the report [_The Limitations of State Laws and Resources fo
 
 ### Basic usage
 
-You may select one or more aspects of state endangered species laws you would like to view on the map under the [Main tab](https://cci-dev.org/shiny/closed/states/#section-main) by checking the boxes of interest. A bar graph of the summed scores can be shown by clicking the "Show Plot" button. The map and the bar graph, including the sorted rankings of states, will automatically update for your selection.
+You may select one or more aspects of state endangered species laws you would like to view on the map under the [Main tab](https://cci-dev.org/shiny/open/state_ESAs/#section-main) by checking the boxes of interest. A bar graph of the summed scores can be shown by clicking the "Show Plot" button. The map and the bar graph, including the sorted rankings of states, will automatically update for your selection.
 
 
 Column {data-width=700}
