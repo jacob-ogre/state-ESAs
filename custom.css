@@ -22,9 +22,13 @@ a:visited {
   padding-right: 0 !important;
 }
 
-div.form-group.shiny-input-container {
-  text-align: right !important;
+.modal-body {
+  padding: 0 !important;
 }
+
+/* div.form-group.shiny-input-container {
+  text-align: right !important;
+} */
 
 .navbar-inverse .navbar-nav>li>a:hover,
 .navbar-inverse .navbar-nav>li>a:focus {
@@ -80,4 +84,9 @@ div.form-group.shiny-input-container {
   border-bottom-right-radius: 2px;
   border-bottom-left-radius: 2px;
   color: #212121;
+}
+
+.btn-default {
+  background-color: #1967BE !important;
+  border-color: #1967BE !important;
 }
