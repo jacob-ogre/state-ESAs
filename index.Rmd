@@ -5,6 +5,8 @@ output:
     css: custom.css
     social: menu
     df_print: paged
+    includes:
+      in_header: ganalytics.html
     navbar:
     - {title: "CLEANR", align: right, href: "http://www.law.uci.edu/academics/centers/cleanr/", target: "_blank"}
     - {title: "CCI", align: right, href: "https://cci-dev.org", target: "_blank"}
@@ -14,6 +16,9 @@ runtime: shiny
 ---
 
 ```{r setup, include=FALSE}
+      # tags$script(src = "google_analytics.js"),
+
+
 knitr::opts_chunk$set(echo = FALSE)
 
 library(dplyr)
