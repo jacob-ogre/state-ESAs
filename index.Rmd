@@ -179,26 +179,29 @@ Column {data-width=1000}
 
 <div style="background: white; padding: 10px">
 
-__Raw data for the analysis.__ Each of the 16 variables is given in a column, each state is in a row. See [Details](https://cci-dev.org/shiny/open/state_ESAs/#section-details) for a table of how each variable was scored.
+__Raw data for the analysis.__ The 16 variables are in columns, states in rows. See [Details](https://cci-dev.org/shiny/open/state_ESAs/#section-details) for a table of how each variable was scored. Download or copy the data using buttons below.
 
 ```{r datatable, echo = FALSE}
-renderDataTable({
-  names(wide) <- c("state", "statute", "plant & animal coverage", 
-                  "taxonomic level coverage", "evidence", "citizen petition", 
-                  "recovery", "conserv. programs", "critical habitat",            
-                  "private land use restrictions", "substantive restrictions", 
-                  "consultation", "animal commerce restrictions", 
-                  "animal take restrictions", "habitat modification is take", 
-                  "plant commerce restrictions", "plant take restrictions",      
-                  "total", "citations", "notes", "code", "rank")  
+names(wide) <- c("state", "statute", "plant & animal coverage", 
+                "taxonomic level coverage", "evidence", "citizen petition", 
+                "recovery", "conserv. programs", "critical habitat",            
+                "private land use restrictions", "substantive restrictions", 
+                "consultation", "animal commerce restrictions", 
+                "animal take restrictions", "habitat modification is take", 
+                "plant commerce restrictions", "plant take restrictions",      
+                "total", "citations", "notes", "code", "rank")  
+DT::renderDataTable({
   DT::datatable(
     wide,
-    extensions = c("Buttons"),
+    filter = "top",
+    extensions = c("Buttons", "FixedHeader"),
     options = list(
+      columnDefs = list(list(className = 'dt-center', targets = "_all")),
       rownames = FALSE,
       pageLength = 50,
       dom = 'Bfrtip',
-      buttons = c('copy', 'csv', 'excel')
+      buttons = c('copy', 'csv', 'excel'),
+      fixedHeader = TRUE
     )
   )
 })
