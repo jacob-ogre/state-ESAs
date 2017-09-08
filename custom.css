@@ -94,3 +94,11 @@ a:visited {
 table.fixedHeader-floating.no-footer {
   top: 50px !important;
 }
+
+@media screen and (-webkit-min-device-pixel-ratio:0)
+  and (min-resolution:.001dpcm) {
+    .dashboard-page-wrapper {
+      padding-top: 55px;
+    }
+}
+
